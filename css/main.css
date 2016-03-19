@@ -34,7 +34,16 @@ input {
   width: 460px;
   height: 40px;
   font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   padding-left: 15px;
+  border-radius:5px;
+  box-shadow: none;
+}
+
+.is-sticky .sticker {
+background-color: white;
+
 }
 
 #gallery {
@@ -48,7 +57,7 @@ input {
   margin: 30px 30px;
 }
 
-/*Media Quiries*/
+/*Media Queries*/
 @media (max-width: 1000px) {
 
 }

@@ -7,10 +7,7 @@ $(".animsition").animsition({
   outDuration: 500
 });
 
-$('.header').sticky({
-  getWidthFrom: '.container',
-  responsiveWidth: true
-});
+
 
 $('.header').on('sticky-start', function () {
   $('.description').html('We build <strong>great</strong> apps');
@@ -34,9 +31,10 @@ $('.work').on('sticky-end', function() {
 */
 
 
-
-
-
+$('.sticker').sticky({
+  getWidthFrom: '.container',
+  responsiveWidth: true
+});
 
 
 

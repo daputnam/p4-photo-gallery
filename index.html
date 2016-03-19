@@ -11,58 +11,64 @@
         <link rel="stylesheet" href="css/normalize.min.css">
 
         <link rel="stylesheet" href="css/main.css">
+
     </head>
     <body>
-      
-<form>
-  <input type="search" name="my-search" placeholder="search for an image">
-</form>
+      <header class="sticker">
+        <form>
+          <input type="search" name="my-search" placeholder="search for an image">
+        </form>
+      </header>
 
-<div id="gallery">
-  <div class="gallery-item">
-    <img src="img/thumb/01.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/02.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/03.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/04.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/05.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/06.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/07.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/08.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/09.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/10.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/11.jpg">
-  </div>
-  <div class="gallery-item">
-    <img src="img/thumb/12.jpg">
-  </div>
-</div>
-<!-- css styles to make gallery look good and responsive w widths -->
+        <div id="gallery">
+          <div class="gallery-item">
+            <img src="img/thumb/01.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/02.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/03.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/04.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/05.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/06.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/07.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/08.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/09.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/10.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/11.jpg">
+          </div>
+          <div class="gallery-item">
+            <img src="img/thumb/12.jpg">
+          </div>
+        </div>
 <!-- 4 images per row each -->
 
-      <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+      <script src="js/jquery-1.11.2.min.js"></script>
 
       <script src="js/sticky/jquery.sticky.js"></script>
       <script src="js/main.js"></script>
+      <script>
+  
+        $("#sticker").sticky({topSpacing:0});
+
+      </script>
       
     </body>
 </html>
