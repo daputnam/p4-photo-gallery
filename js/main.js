@@ -1,36 +1,3 @@
-/*
-$(".animsition").animsition({
-  inClass: 'fade-in-right-lg',
-  outClass: 'fade-out-right-lg',
-  linkElement: 'header a',
-  inDuration: 1000,
-  outDuration: 500
-});
-
-
-
-$('.header').on('sticky-start', function () {
-  $('.description').html('We build <strong>great</strong> apps');
-});
-
-$('.header').on('sticky-end', function () {
-  $('.description').html('We build apps');
-});
-
-$('.work').sticky({
-  topSpacing: 60,
-  getWidthFrom: '.container',
-  responsiveWidth: true
-});
-$('.work').on('sticky-start', function() {
-  $(this).append(' <a href="mailto:email@website.com" class="email-text">Email&nbsp;us</a>');
-});
-$('.work').on('sticky-end', function() {
-    $('.email-text').remove();
-});
-*/
-
-
 $('.sticker').sticky({
   getWidthFrom: '.container',
   responsiveWidth: true
@@ -38,14 +5,16 @@ $('.sticker').sticky({
 
 //lightbox code
 var $overlay = $('<div id="overlay"></div>');
-var $image = $("<img>");
+var $image = $("<img class='current'>");
 var $caption = $("<p></p>");
 var $leftArrow = $("<div><p id='leftArrow'><</p></div>");
 var $rightArrow = $("<div><p id='rightArrow'>></p></div>");
+var newImg;
 
 $overlay.append($leftArrow);
 $overlay.append($image);
 $overlay.append($rightArrow);
+
 // add overlay
 $overlay.append($caption);
     //a caption
@@ -66,15 +35,36 @@ $('#imageGallery a').click(function(event){
 
   $caption.text(captionText);
 
+  //set this a as .selected
+  $(this).addClass("selected");
 });
+
 // when overlay is clicked 
-$('#overlay').click(function(){
+$('.current').click(function(){
   //hide overlay
   $overlay.hide();
-
+  //remove selected class from 'a' links
+  $(".selected").removeClass("selected");
 });
   
+$($leftArrow).click(function(){
+  newImg = $("#imageGallery .selected").parent(".gallery-item").prev().children("a");
+  console.log(newImg);
+  newImgLocation = newImg.attr("href");
+  newImg.next().removeClass("selected");
+  newImg.addClass("selected");
+  $image.attr("src",newImgLocation)
 
+});
+
+$($rightArrow).click(function(){
+  newImg = $("#imageGallery .selected").parent(".gallery-item").next().children("a");
+  console.log(newImg);
+  newImgLocation = newImg.attr("href");
+  newImg.prev().removeClass("selected");
+  newImg.addClass("selected");
+  $image.attr("src",newImgLocation)
+});
 
 
 

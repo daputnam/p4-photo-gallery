@@ -84,15 +84,21 @@ background-color: white;
 }
 
 div #leftArrow, div #rightArrow  {
-  color: red;
+  color: white;
   display: inline;
   font-size: 4em;
   margin-top: 20%;
 }
 div #leftArrow{
+  position:fixed;
+  top:15%;
+  left:10%;
   float:left;
 } 
 div #rightArrow  {
+  position:fixed;
+  top:15%;
+  right:10%;
   float:right;
 }
 
