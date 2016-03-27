@@ -8,10 +8,9 @@ var $image = $("<img class='current'>");
 var $caption = $("<p></p>");
 var $leftArrow = $("<div><p id='leftArrow'><</p></div>");
 var $rightArrow = $("<div><p id='rightArrow'>></p></div>");
-var galleryMax = $('#imageGallery').length;
-// not working right? alert(galleryMax);
+var galleryMax = $('.gallery-item').length;
 var newImgLocation;
-var counter = 0;
+//var counter = 0;
 var newImg;
 
 $overlay.append($leftArrow);
@@ -51,9 +50,7 @@ $('.current').click(function(){
 });
   
 $('#leftArrow').click(function(){
-  //add counter 
-  counter -= 1;
-  console.log(counter);
+  //counter -= 1;
   newImg = $("#imageGallery .selected").parent(".gallery-item").prev().children("a");
   console.log(newImg);
   newImgLocation = newImg.attr("href");
@@ -61,13 +58,12 @@ $('#leftArrow').click(function(){
   newImg.addClass("selected");
   $image.attr("src",newImgLocation)
   //update caption here
-
+  captionText = newImg.children("img").attr("alt");
+  $caption.text(captionText);
 });
 
 $('#rightArrow').click(function(){
-  console.log($('#rightArrow'));
-  counter += 1;
-  console.log(counter);
+  //counter += 1;
   newImg = $("#imageGallery .selected").parent(".gallery-item").next().children("a");
   console.log(newImg);
   newImgLocation = newImg.attr("href");
@@ -75,6 +71,8 @@ $('#rightArrow').click(function(){
   newImg.addClass("selected");
   $image.attr("src",newImgLocation)
   //update caption here
+  captionText = newImg.children("img").attr("alt");
+  $caption.text(captionText);
 
 });
 
