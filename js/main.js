@@ -3,12 +3,15 @@ $('.sticker').sticky({
   responsiveWidth: true
 });
 
-//lightbox code
 var $overlay = $('<div id="overlay"></div>');
 var $image = $("<img class='current'>");
 var $caption = $("<p></p>");
 var $leftArrow = $("<div><p id='leftArrow'><</p></div>");
 var $rightArrow = $("<div><p id='rightArrow'>></p></div>");
+var galleryMax = $('#imageGallery').length;
+// not working right? alert(galleryMax);
+var newImgLocation;
+var counter = 0;
 var newImg;
 
 $overlay.append($leftArrow);
@@ -47,23 +50,32 @@ $('.current').click(function(){
   $(".selected").removeClass("selected");
 });
   
-$($leftArrow).click(function(){
+$('#leftArrow').click(function(){
+  //add counter 
+  counter -= 1;
+  console.log(counter);
   newImg = $("#imageGallery .selected").parent(".gallery-item").prev().children("a");
   console.log(newImg);
   newImgLocation = newImg.attr("href");
-  newImg.next().removeClass("selected");
+  newImg.parent(".gallery-item").next().children("a").removeClass("selected");
   newImg.addClass("selected");
   $image.attr("src",newImgLocation)
+  //update caption here
 
 });
 
-$($rightArrow).click(function(){
+$('#rightArrow').click(function(){
+  console.log($('#rightArrow'));
+  counter += 1;
+  console.log(counter);
   newImg = $("#imageGallery .selected").parent(".gallery-item").next().children("a");
   console.log(newImg);
   newImgLocation = newImg.attr("href");
-  newImg.prev().removeClass("selected");
+  newImg.parent(".gallery-item").prev().children("a").removeClass("selected");
   newImg.addClass("selected");
   $image.attr("src",newImgLocation)
+  //update caption here
+
 });
 
 
