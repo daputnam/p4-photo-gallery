@@ -8,8 +8,9 @@ var $image = $("<img class='current'>");
 var $caption = $("<p></p>");
 var $leftArrow = $("<div><p id='leftArrow'><</p></div>");
 var $rightArrow = $("<div><p id='rightArrow'>></p></div>");
-var galleryMax = $('.gallery-item').length;
+//var galleryMax = $('.gallery-item').length;
 var newImgLocation;
+var captionText;
 //var counter = 0;
 var newImg;
 
@@ -93,23 +94,27 @@ $('#search').keyup(function(){
     if ($(this).attr("href").indexOf(searchQuery) < 0 
         && $(this).children("img").attr("title").indexOf(searchQuery) < 0 
         && $(this).children("img").attr("alt").indexOf(searchQuery) < 0){
-      $(this).hide();
+      $(this).hide("slow");
     }
 
   });
 
 });
-/*
-function updateVegetablesCollection (veggies, veggie) {
-    if (veggies.indexOf(veggie) === -1) {
-        veggies.push(veggie);
-        console.log('New veggies collection is : ' + veggies);
-    } else if (veggies.indexOf(veggie) > -1) {
-        console.log(veggie + ' already exists in the veggies collection.');
-    }
-}
 
-*/
+//listen for keyboard left and right arrows
+$(document).keydown(function(e) {
+    console.log(e.keyCode);
+    if (e.keyCode === 37){
+      //left arrow
+      $("#leftArrow").trigger("click");
+
+    }
+    if (e.keyCode === 39){
+      //right arrow
+      $("#rightArrow").trigger("click");
+    }
+});
+
 
 
 

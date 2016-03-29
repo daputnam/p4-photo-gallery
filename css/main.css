@@ -108,36 +108,31 @@ div #rightArrow  {
 
 }
 @media (max-width: 700px) {
+  #search { 
+    max-width: 70%;
   }
-
-/*Sticky
-
-.header {
-  background-color: white;
-  transition: 1s;
+  img {
+    max-width: 120px;
+  }
+  div #leftArrow{
+  position:fixed;
+  top:2%;
+  left:5%;
+  float:left;
+  } 
+  div #rightArrow  {
+  position:fixed;
+  top:2%;
+  right:5%;
+  float:right;
+  }
+  #overlay p {
+  
+  max-width: 70%;
+  
+}
 }
 
-.is-sticky .header {
-  background-color: black;
-  z-index: 1000;
-}
-
-.is-sticky .work {
-  background: #fff;
-  padding: 12px 0;
-  margin: 0;
-}
-
-/* slick styles 
-.slick-dots {
-    bottom: 20px;
-}
-.slick-dots li button:before {
-    font-size: 16px;
-}
-
-
-*/
 
 
 
