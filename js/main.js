@@ -13,6 +13,7 @@ var newImgLocation;
 //var counter = 0;
 var newImg;
 
+
 $overlay.append($leftArrow);
 $overlay.append($image);
 $overlay.append($rightArrow);
@@ -78,9 +79,37 @@ $('#rightArrow').click(function(){
 
 
 
+//search keyup() each(a) show and then immediately hide all that dont match
+//on keyup, show all, for each() check indexof is -1, then hide
+var searchQuery = '';
+$('#search').keyup(function(){
+  searchQuery = $(this).val();
+  console.log(searchQuery);
+  $('a').each(function(){
+    console.log($(this));
+    //show all of them
+    $(this).show();
+    //hide if filename title or alt are indexof < 0
+    if ($(this).attr("href").indexOf(searchQuery) < 0 
+        && $(this).children("img").attr("title").indexOf(searchQuery) < 0 
+        && $(this).children("img").attr("alt").indexOf(searchQuery) < 0){
+      $(this).hide();
+    }
 
+  });
 
+});
+/*
+function updateVegetablesCollection (veggies, veggie) {
+    if (veggies.indexOf(veggie) === -1) {
+        veggies.push(veggie);
+        console.log('New veggies collection is : ' + veggies);
+    } else if (veggies.indexOf(veggie) > -1) {
+        console.log(veggie + ' already exists in the veggies collection.');
+    }
+}
 
+*/
 
 
 
