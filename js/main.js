@@ -8,12 +8,6 @@ var $image = $("<img class='current'>");
 var $caption = $("<p></p>");
 var $leftArrow = $("<div><p id='leftArrow'><</p></div>");
 var $rightArrow = $("<div><p id='rightArrow'>></p></div>");
-//var galleryMax = $('.gallery-item').length;
-var newImgLocation;
-var captionText;
-//var counter = 0;
-var newImg;
-
 
 $overlay.append($leftArrow);
 $overlay.append($image);
@@ -52,7 +46,10 @@ $('.current').click(function(){
 });
   
 $('#leftArrow').click(function(){
-  //counter -= 1;
+  var newImgLocation;
+  var captionText;
+  var newImg;
+
   newImg = $("#imageGallery .selected").parent(".gallery-item").prev().children("a");
   console.log(newImg);
   newImgLocation = newImg.attr("href");
@@ -65,7 +62,10 @@ $('#leftArrow').click(function(){
 });
 
 $('#rightArrow').click(function(){
-  //counter += 1;
+  var newImgLocation;
+  var captionText;
+  var newImg;
+
   newImg = $("#imageGallery .selected").parent(".gallery-item").next().children("a");
   console.log(newImg);
   newImgLocation = newImg.attr("href");
@@ -115,7 +115,14 @@ $(document).keydown(function(e) {
     }
 });
 
-
+$(document).keyup(function(e) {
+  if (e.keyCode === 27) {
+    //hide overlay
+    $overlay.hide();
+    //remove selected class from 'a' links
+    $(".selected").removeClass("selected");
+  }
+});
 
 
 
